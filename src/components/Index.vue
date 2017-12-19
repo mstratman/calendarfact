@@ -80,9 +80,6 @@ export default {
   name: 'Index',
   mixins: [RandomizeBackground],
   watch: {
-    '$route': function() {
-      this.setSelectionsFromRoute()
-    },
     selections: function() {
       this.$router.push({ name: 'Selections', params: { selections: this.selectionsParam }})
     },
@@ -93,7 +90,11 @@ export default {
     }
   },
   mounted: function() {
-    this.setRandomSelection()
+    if (! this.$route.params["selections"]) {
+      this.setRandomSelection()
+    } else {
+      this.setSelectionsFromRoute()
+    }
   },
   computed: {
     selectionsParam() {
