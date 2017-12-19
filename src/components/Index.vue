@@ -219,7 +219,6 @@ h2 {
   }
   img {
     max-width: 80%;
-    text-align: c
   }
 }
 .regenerate {
