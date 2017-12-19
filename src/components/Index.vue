@@ -184,6 +184,7 @@ $breakpoint: 480px;
   padding: 3rem;
   white-space: pre-wrap;
   word-wrap: break-word;
+  font-weight: bold;
 }
 @media screen and (max-width: $breakpoint) {
   .contents {
