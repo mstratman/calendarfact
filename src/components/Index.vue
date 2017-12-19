@@ -14,6 +14,7 @@
 
 <script>
 import RandomizeBackground from '../mixins/randomize_background'
+import Polyfills from '../poly'
 
 const fragments = [
   'Did you know that',
@@ -102,12 +103,11 @@ export default {
     },
     fact: function() {
       let rv = ''
-      //let fragments = JSON.parse(JSON.stringify(fragments))
       let selections = JSON.parse(JSON.stringify(this.selections))
 
       let printFragment = (frag) => {
         if (isString(frag)) {
-          if (frag !== '.' && frag !== '?' && rv.length) {
+          if (rv.length && ! rv.endsWith("\n")) {
             rv += ' '
           }
           rv += frag
@@ -156,8 +156,7 @@ export default {
       this.selections = s
     },
     setSelectionsFromRoute: function() {
-      let s = this.$route.params.selections
-      this.selections = s.split(':')
+      this.selections = this.$route.params.selections.split(':')
     },
   }
 }
