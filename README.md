@@ -5,6 +5,8 @@ Generates a random calendar "fact" based on https://xkcd.com/1930/
 
 ## Build Setup
 
+This builds to `docs` for github pages
+
 ``` bash
 # install dependencies
 npm install
